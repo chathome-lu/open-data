@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Cite ChatHome (chathome.lu), the version and input dates; retain upstream attribution."
+type: dataset
+title: "ChatHome Luxembourg and Grande Région housing aggregates and modelled commutes"
+authors:
+  - name: "ChatHome (chathome.lu)"
+version: "2026.10-5"
+date-released: "2026-10-25"
+url: "https://chathome.lu/en/data"
+repository-artifact: "https://github.com/chathome-lu/open-data/releases/tag/open-data-2026.10-5"
+license:
+  - CC-BY-4.0
+  - ODbL-1.0

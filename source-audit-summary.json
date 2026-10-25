@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-10-25T17:17:29.917Z",
+  "captureSha256": "02790f0a7edd13cc6a6e3e673226617603d6a52b7039f5ee6b92455f865ba073",
+  "retainedPagesHashVerified": 24,
+  "selection": "first 400 document-id-ordered active roots; round-robin countries then tenure/legacy-energy strata, at most two adverts per agency",
+  "countryFieldStrata": {
+    "BE": 6,
+    "DE": 6,
+    "FR": 6,
+    "unknown": 6
+  },
+  "detectedIssues": {
+    "legacy_energy_class_conflict": 1,
+    "active_record_with_terminal_or_reservation_source_wording": 3
+  },
+  "verdict": "Source-quality concerns found. This sample does not certify the published aggregates.",
+  "limitations": [
+    "Current active pipeline spot-check. Not a random sample or proof of exact 2026-10-18 cohort membership; no live agency requests, AI calls or production writes.",
+    "Six country fields are unknown in the captured root projection; do not relabel these as a verified Luxembourg stratum.",
+    "All selected adverts are buy listings. Rental accuracy and deduplication are untested.",
+    "Direct labelled CPE comparisons and explicit sold/compromis wording are conservative issue detectors, not a complete extraction or measured error rate.",
+    "Source pages can contain different prices in the same page; that needs source adjudication. One apparent area-precision mismatch was resolved against an explicit, more precise living-area statement in the retained description.",
+    "The exact October export cohort has not been re-extracted. Canonical V3 migration remains paused. No production fact or status was changed."
+  ],
+  "readBudget": {
+    "declaredMaximumDocs": 1600,
+    "declaredMaximumMB": 20,
+    "estimatedEuroCost": 0.005,
+    "actualFirestoreDocsAcrossTwoSelections": 848,
+    "storedPageDownloadsBytes": 1219412,
+    "sharedVersionCheckedCache": true
+  },
+  "codePolicyEvidence": {
+    "path": "backend/cloud-run/src/services/open-data/energy-class-asking-prices.core.ts",
+    "policy": "Current code requires V3 card bodies and country headline certificate facets; legacy root energyClass is not the aggregate input. A root conflict does not prove export contamination."
+  },
+  "nextActions": [
+    "Check exact export cohort membership and certificate facet evidence before attributing a legacy root conflict to an aggregate cell.",
+    "Test generic active-cohort exclusions against exact source lifecycle evidence; do not disable records from a summary regex alone.",
+    "Use a separately budgeted complete cohort extraction before claiming corrected raw observations or an export error rate."
+  ]
+}
